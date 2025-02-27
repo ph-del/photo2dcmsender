@@ -1,5 +1,4 @@
 # Photo2DcmSender v1.0
-this project aims to transfer photos from a hot folder to dicom and send them to the pacs server
 
 ## Popis
 Photo2DcmSender je program pro převod obrázků na formát DICOM. Umožňuje uživatelům odesílat obrázky ve formátu JPEG, PNG nebo BMP jako DICOM soubory do systému AEC. Program je postaven na knihovně wxPython pro grafické rozhraní a dalších knihovnách pro zpracování souborů a komunikaci.
