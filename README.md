@@ -28,10 +28,10 @@ Tento program je distribuován v naději, že bude užitečný, ale BEZ JAKÉKOL
 Měli byste obdržet kopii GNU General Public License spolu s tímto programem. Pokud ne, podívejte se na https://www.gnu.org/licenses/.
 
 ## Kontakty
-Autor: Pavel Honz
-Email: pavel.honz@gmail.com
-Zdrojový kód: [GitHub](https://github.com/ph-del/photo2dcmsender)
-Copyright (c) 2025 Pavel Honz
+Autor: Pavel Honz<br>
+Email: pavel.honz@gmail.com<br>
+Zdrojový kód: [GitHub](https://github.com/ph-del/photo2dcmsender)<br>
+Copyright (c) 2025 Pavel Honz<br>
 
 ---
 
@@ -68,7 +68,7 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see https://www.gnu.org/licenses/.
 
 ## Contact
-Author: Pavel Honz
-Email: pavel.honz@gmail.com
-Source Code: [GitHub](https://github.com/ph-del/photo2dcmsender)
-Copyright (c) 2025 Pavel Honz
+Author: Pavel Honz<br>
+Email: pavel.honz@gmail.com<br>
+Source Code: [GitHub](https://github.com/ph-del/photo2dcmsender)<br>
+Copyright (c) 2025 Pavel Honz<br>
