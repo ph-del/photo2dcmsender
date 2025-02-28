@@ -31,23 +31,37 @@ from datetime import datetime
 if not os.path.exists('logs'):
     os.makedirs('logs')
 
+from src.dats import load_config
+configLogger = load_config()
+programLogLevel = configLogger['LOG_LEVEL']['programRun'].upper()
+mwlLogLevel = configLogger['LOG_LEVEL']['dicomMwl'].upper() 
+consoleLevel = configLogger['LOG_LEVEL']['console'].upper()
+logFileName = f'logs/{datetime.now().strftime("%y%m")}.log'
+
+
 log_config = {
     "version":1,
     "root":{
-        "handlers" : ["console", "file"],
+        "handlers" : ["console", "file", "pynetFile"],
         "level": "DEBUG"
     },
     "handlers":{
         "console":{
             "formatter": "standard",
             "class": "logging.StreamHandler",
-            "level": "DEBUG"
+            "level": consoleLevel
         },
         "file":{
             "formatter":"standard",
             "class":"logging.FileHandler",
-            "level":"INFO",
-            "filename":f'logs/{datetime.now().strftime("%y%m")}.log'
+            "level": programLogLevel,
+            "filename": logFileName
+        },
+        "pynetFile":{
+            "formatter":"standard",
+            "class":"logging.FileHandler",
+            "level": mwlLogLevel,
+            "filename": logFileName  
         }
     },
     "formatters":{

@@ -91,45 +91,14 @@ texts = {
     "colStudyDate" :{"en": "Study date", "cz": "Datum studie"},
     "colStudyUid" :{"en": "Study UID", "cz": "Study UID"},
 
-    "titleManualInput" :{"en": "Manual Input of Patient Info", "cz": "Ruční zadání informací o pacientovi"},
-    "infoDialog":{"en":"Information - Data was sended", "cz" : "Informace - Data odeslána"},
-    "infoAboutProgram" : {"en": 
-                        "Photo2DcmSender v1.0\n\n" \
-"This program is free software: you can redistribute it and/or modify\n" \
-"it under the terms of the GNU General Public License as published by\n" \
-"the Free Software Foundation, either version 3 of the License, or\n" \
-"(at your option) any later version.\n" \
-"\n" \
-"This program is distributed in the hope that it will be useful,\n" \
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n" \
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n" \
-"GNU General Public License for more details.\n" \
-"\n" \
-"You should have received a copy of the GNU General Public License\n" \
-"along with this program. If not, see <https://www.gnu.org/licenses/>\n\n" \
-"Source code:\n" \
-"https://github.com/ph-del/photo2dcmsender\n\n" \
-"pavel.honz@gmail.com\n\n" \
-"Copyright (c) 2025 Pavel Honz",
-                          "cz": "Photo2DcmSender v1.0\n\n" \
-"Tento program je svobodný software: můžete jej šířit a/nebo upravovat\n" \
-"podle podmínek GNU General Public License, jak ji zveřejnila\n" \
-"Free Software Foundation, buď verze 3 této licence, nebo\n" \
-"(podle vašeho výběru) jakákoli pozdější verze.\n" \
-"\n" \
-"Tento program je distribuován v naději, že bude užitečný,\n" \
-"ale BEZ JAKÉKOLI ZÁRUKY; dokonce i bez předpokládané záruky PRODEJNOSTI nebo VHODNOSTI PRO KONKRÉTNÍ ÚČEL. Viz\n" \
-"GNU General Public License pro další podrobnosti.\n" \
-"\n" \
-"Byli byste měli obdržet kopii GNU General Public License\n" \
-"spolu s tímto programem. Pokud ne, podívejte se na <https://www.gnu.org/licenses/>\n\n" \
-"Zdrojový kód:\n" \
-"https://github.com/ph-del/photo2dcmsender\n\n" \
-"pavel.honz@gmail.com\n\n" \
-"Copyright (c) 2025 Pavel Honz"
-},
     "infoAboutProgramTitle" : {"en": "Photo2DcmSender", "cz" : "Photo2DcmSender"},
-    "infoSuccessfullySent": {"en": "Images was successfully sended to storage server", "cz":"Snímky byly úspěšně odeslány na úložiště"},
+    "infoDialog":{"en":"Data was sended", "cz" : "Data odeslána"},
+    "infoFileProcessing":{"en": "File processing", "cz": "Zpracovávání souborů"},
+    "infoFileSendings":{"en": "Files are being uploaded...", "cz": "Probíhá odesílání souborů..."},
+    "infoSuccessfullySent": {"en": "Images was successfully sended", "cz":"Snímky byly úspěšně odeslány"},
+    
+    "titleManualInput" :{"en": "Manual Input of Patient Info", "cz": "Ruční zadání informací o pacientovi"},
+    
     "warningDialog" :{"en": "Warning - Insufficient data!", "cz": "Upozornění - Nedostatečná data!"},
     "warningFirstName" :{"en": "First name must be filled in.", "cz": "Jméno musí být vyplněno."},
     "warningLastName" :{"en": "Last name must be filled in.", "cz": "Příjmení musí být vyplněno."},
@@ -138,15 +107,80 @@ texts = {
     "warningNoImageInDir" :{"en": "There are no files, in selected folder. Please select folder with image files",
                             "cz": "V zadané složce nejsou žádné obrázky. Prosím zadejte složku s obrázky"},
     "warningPatientId" :{"en": "Patient ID must be filled in.", "cz": "Rodné číslo musí být vyplněno."},
+
+
+    "infoAboutProgram" : {"en":
+                          """\
+Photo2DcmSender v1.0
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License, as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.
+If not, see <https://www.gnu.org/licenses/>
+
+Source code:
+https://github.com/ph-del/photo2dcmsender
+
+pavel.honz@gmail.com
+
+Program created for:
+
+Pardubická nemocnice
+Kyjevská 44
+53203 Pardubice
+
+Copyright (c) 2025 Pavel Honz
+""",
+
+    "cz": """\
+Photo2DcmSender v1.0
+
+Tento program je svobodný software: můžete jej šířit
+a/nebo upravovat podle podmínek GNU General Public License,
+jak ji zveřejnila Free Software Foundation, buď verze 3 
+této licence, nebo (podle vašeho výběru) jakákoli pozdější 
+verze.
+
+Tento program je distribuován v naději, že bude užitečný,
+ale BEZ JAKÉKOLI ZÁRUKY; dokonce i bez předpokládané záruky
+PRODEJNOSTI nebo VHODNOSTI PRO KONKRÉTNÍ ÚČEL. Viz
+GNU General Public License pro další podrobnosti.
+
+Byli byste měli obdržet kopii GNU General Public License
+spolu s tímto programem.
+Pokud ne, podívejte se na <https://www.gnu.org/licenses/>
+
+Zdrojový kód:
+https://github.com/ph-del/photo2dcmsender
+
+pavel.honz@gmail.com
+
+Program vytvořen pro:
+
+Pardubická nemocnice
+Kyjevská 44
+53203 Pardubice
+
+Copyright (c) 2025 Pavel Honz
+"""
+
+}
 }
 
-default_config = """
+default_config = r"""
 "!! Any further comments must not contain diacritics !!"
+"!! Komentare nesmi obsahovat diakritiku !!"
 
-[LANGUAGE]
 
-# possible values: cz, en 
-language = cz
 
 [DICOM_SETTINGS]
 
@@ -155,33 +189,33 @@ language = cz
 aet = TEST_1
 
 # ip address store server
-ipAddress = 10.10.10.200
+ipAddress = 192.168.1.1
 
 # port store server
-port = 5380
+port = 104
 
 # aet store server
-aec = DPGW_5251_PU
+aec = DICOM_SERVER
 
 
 ### MWL
 # aet mwl server
-mwlScpAet = DPGW_5251_PU
+mwlScpAet = MWL_SERVER
 
 # ip address mwl server
-mwlScpIpAddress = 10.10.10.200
+mwlScpIpAddress = 192.168.1.2
 
 # port mwl server
-mwlScpPort = 5380
+mwlScpPort = 104
 
 # front 
-# (musi byt nastaveno na strane PACS napr. UZCUP, pokud neni na strane PACS nastaveno, je nutno toto nastaveni zakomentovat)
+# (v nempk musi byt nastavena fronta pro modalitu na strane PACS napr. UZCUP, pokud neni na strane PACS nastaveno, je nutno toto nastaveni zakomentovat)
 mwlScheduledStationAETitle = TEST_1
 
 
 # additional information for created dicom studies
-institutionName = NEMPK
-institutionAddress = Kyjevska 44, 530 02 Pardubice
+institutionName = INSTITUTION
+institutionAddress = ADDRESS
 modalityType = XC       # XC, OT, ST
 
 [FILES_SETTINGS]
@@ -204,9 +238,19 @@ folderToMoveImages = C:\dicomized
 saveDicomizedImages = False
 folderToSaveDicomizedImages =  C:\dicomized
 
-[LOG_LEVEL]
-# possible values: DEBUG, INFO, WARNING, ERROR, CRITICAL
-dicomMwl = INFO
+#########################################
+#### DEVELOPMENT NOT NEEDED TO EDIT #####
+#########################################
+
+[LANGUAGE]
+
+# possible values: cz, en 
+language = cz
+
+[DEVELOPMENT_TOOLS]
+# sendDicomFileOff = True | False
+# If true, dicomized data will not be send to AEC (default False)
+sendDicomFileOff = False
 
 [MWL_COLUMN_ORDER]
 # order columns mwl
@@ -217,10 +261,11 @@ birthDate = 3
 accessionNumber = 4 
 reqPhys = 5
 
-[DEVELOPMENT_TOOLS]
-# sendDicomFileOff = True | False
-# If true, dicomized data will not be send to AEC (default False)
-sendDicomFileOff = False
+[LOG_LEVEL]
+# possible values: DEBUG, INFO, WARNING, ERROR, CRITICAL
+dicomMwl = WARNING
+programRun = INFO
+console = DEBUG
 
 """
 

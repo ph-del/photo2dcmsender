@@ -20,20 +20,23 @@ from src.gui  import ManualInput
 
 config = load_config()
 
-# Získání úrovně logování z konfigurace
-log_level = config['LOG_LEVEL']['dicomMwl'].upper()  # Převede na velká písmena pro kompatibilitu
+# # Získání úrovně logování z konfigurace
+# log_level = config['LOG_LEVEL']['dicomMwl'].upper()  # Převede na velká písmena pro kompatibilitu
 
-# Nastavení logování pro pynetdicom podle hodnoty z konfigurace
-logging.getLogger("pynetdicom").setLevel(getattr(logging, log_level))
+# # Nastavení logování pro pynetdicom podle hodnoty z konfigurace
+# logging.getLogger("pynetdicom").setLevel(getattr(logging, log_level))
 
 # Získání loggeru PyNetDicom
-pynetdicom_logger = logging.getLogger("pynetdicom")
+pynetDicomLogger = logging.getLogger("pynetdicom")
 
 # Nastavení úrovně loggeru
-pynetdicom_logger.setLevel(getattr(logging, log_level))
+#pynetDicomLogger.setLevel(getattr(logging, log_level))
+for idx, handler in enumerate(logging.getLogger().handlers):
+    print(f"Handler {idx}: {handler}")
+pynetDicomLogger.addHandler(logging.getLogger().handlers[2]) 
 
-for handler in pynetdicom_logger.handlers:
-    handler.setLevel(getattr(logging, log_level))
+# for handler in pynetDicomLogger.handlers:
+#     handler.setLevel(getattr(logging, log_level))
 
 
 uidPrefix = "1.2.203.93."  #1.2.203 prefix for cz + my favorite
@@ -265,7 +268,7 @@ def set_initial_directory(files):
             logger.warning(f"Cannot create a folder {hot_folder}: {e}")
             hot_folder = os.getcwd()
 
-    logger.info(f"Folder {hot_folder} was loaded.")
+    logger.debug(f"Folder {hot_folder} was loaded.")
     return hot_folder
 
     
@@ -455,6 +458,9 @@ def send_to_aec(event, entered, files, preview):
     
     logging.info(f"Study info: patient name: {patientName}, patient id: {patientId}, acc no: {accessionNumber}, date: {studyDate},time: {studyTime}, uid: {studyUid } ")
     
+    file_count = len(files.lbLoadedFiles.GetItems())
+    dlg = wx.ProgressDialog(load_text("infoFileProcessing"), load_text("infoFileSendings"),  file_count, entered,  style=wx.PD_AUTO_HIDE | wx.PD_APP_MODAL)
+    
     fileNumber = 1
     for image in files.lbLoadedFiles.GetItems():
         file = os.path.join(files.dpcSelectedFolder.GetPath(), image)
@@ -462,13 +468,15 @@ def send_to_aec(event, entered, files, preview):
         send_dicom_file(dicomFile, file)
         after_send_dicom_file_proccess(dicomFile, file)
         fileNumber += 1
-    
+        # Aktualizace ProgressDialogu s aktuálním pokrokem
+        dlg.Update(fileNumber-1)  # Aktualizuje hodnotu pokroku
+    dlg.Destroy()  # Zavře ProgressDialog
     after_send_dicom_study_proccess(entered, preview)
     return
 
 def after_send_dicom_study_proccess(entered,preview):
     """Function proccessing study ater send to dicom aet"""
-    message = wx.MessageDialog(entered, load_text("infoSuccessfullySent"), load_text("infoDialog"), wx.OK | wx.ICON_INFORMATION)
+    message = wx.MessageDialog(entered, load_text("infoSuccessfullySent"), load_text("infoDialog"), wx.OK)
     message.ShowModal()
     message.Destroy()
 
