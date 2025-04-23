@@ -19,9 +19,15 @@
 
 # this project aims to transfer photos from a hot folder to dicom and send them to the pacs server
 # for image dicomization it is possible to use the worklist
-# 26.02.2025
-# v 1.0
 
+# v 1.1
+# fix 
+# - Swapped first and last name in manual input (functions.py)
+# - Fixed default config file: comment on the same line as a value was being interpreted as part of the value.(dats.py)
+# 23.04.2025
+
+# used commands:
+# pyinstaller --icon=src\img\icon-16.png  --noconsole .\photo2dcm_sender.py
 
 import os
 import logging

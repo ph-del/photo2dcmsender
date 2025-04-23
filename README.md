@@ -1,4 +1,4 @@
-# Photo2DcmSender v1.0
+# Photo2DcmSender 
 
 ## Popis
 Photo2DcmSender je program pro převod obrázků na formát DICOM. Umožňuje uživatelům odesílat obrázky ve formátu JPEG, PNG nebo BMP jako DICOM soubory do systému AEC. Program je postaven na knihovně wxPython pro grafické rozhraní a dalších knihovnách pro zpracování souborů a komunikaci.
@@ -9,6 +9,16 @@ Pokud chcete spustit tento program, ujistěte se, že máte nainstalovaný Pytho
 ```bash
 pip install -r requirements.txt
 ```
+
+## Verze
+
+### Photo2DcmSender 1.1
+- Prohozené jméno a příjmení při ručním zadání (functions.py)
+- Opraven výchozí konfigurační soubor: komentář na stejném řádku jako hodnota byl chybně považován za součást hodnoty (dats.py)
+
+### Photo2DcmSender 1.0
+- První vydání
+
 ### Použité knihovny
 - configparser (verze 7.1.0) – MIT License
 - czech-holidays (verze 1.0.0) – MIT License
@@ -48,6 +58,14 @@ To run this program, make sure you have Python 3.x installed and all required de
 ```bash
 pip install -r requirements.txt
 ```
+
+## Version
+
+### Photo2DcmSender 1.1
+- Swapped first and last name in manual input (functions.py)
+- Fixed default config file: comment on the same line as a value was being interpreted as part of the value (dats.py)
+### Photo2DcmSender 1.0
+- First release
 
 ### Used Libraries
 configparser (version 7.1.0) – MIT License

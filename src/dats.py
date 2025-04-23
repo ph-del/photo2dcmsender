@@ -177,8 +177,8 @@ Copyright (c) 2025 Pavel Honz
 }
 
 default_config = r"""
-"!! Any further comments must not contain diacritics !!"
-"!! Komentare nesmi obsahovat diakritiku !!"
+# "!! Any further comments must not contain diacritics !!"
+# "!! Komentare nesmi obsahovat diakritiku !!"
 
 
 
@@ -216,7 +216,8 @@ mwlScheduledStationAETitle = TEST_1
 # additional information for created dicom studies
 institutionName = INSTITUTION
 institutionAddress = ADDRESS
-modalityType = XC       # XC, OT, ST
+# XC, OT, ST
+modalityType = XC       
 
 [FILES_SETTINGS]
 # hotFolder = path (e.g. C:\my folder)

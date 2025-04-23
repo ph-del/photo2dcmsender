@@ -218,7 +218,7 @@ def on_save_input_data_click(event, dialog, entered):
 
     if patientId != "" and firstName != "" and lastName != "":
         entered.stPatientIdEntered.SetLabel(patientId)
-        entered.stPatientNameEntered.SetLabel(firstName + " " + lastName)
+        entered.stPatientNameEntered.SetLabel(lastName + " " + firstName)
         entered.stAccessionNumberEntered.SetLabel(accessionNumber)
         entered.stStudyUidEntered.SetLabel(uidPrefix + generate_uid().split('.')[-1])   
         dialog.Close()
