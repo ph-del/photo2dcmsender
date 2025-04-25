@@ -21,13 +21,19 @@
 # for image dicomization it is possible to use the worklist
 
 # v 1.1
-# fix 
-# - Swapped first and last name in manual input (functions.py)
-# - Fixed default config file: comment on the same line as a value was being interpreted as part of the value.(dats.py)
-# 23.04.2025
+# - Fix: Swapped first and last name in manual input (functions.py)
+# - Fix: In default config file: comment on the same line as a value was being interpreted as part of the value.(dats.py)
+# - Fix: In manual input mode, images appeared to be sent to PACS even when no DICOM connection was established due to incorrect configuration. (functions.py)
+# - Added: Info message when sending data to PACS fails. (functions.py)
+# - Added: Info message when querying the worklist fails. (functions.py)
+# - Fix: Program icon now loads correctly after building the .exe file. (mainwindow.py, gui.py)
+
+# 25.04.2025
 
 # used commands:
 # pyinstaller --icon=src\img\icon-16.png  --noconsole .\photo2dcm_sender.py
+# latest:
+# pyinstaller --onefile --noconsole --icon=src\img\icon-16.png --add-data "src/img:img" photo2dcm_sender.py
 
 import os
 import logging

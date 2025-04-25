@@ -106,14 +106,23 @@ def on_search_click(event, filters, worklist):
     assoc = ae.associate(config["DICOM_SETTINGS"]["mwlScpIpAddress"], int(config["DICOM_SETTINGS"]["mwlScpPort"]), None,config["DICOM_SETTINGS"]["mwlScpAet"])
 
     if assoc.is_established:
-        responses = assoc.send_c_find(ds, ModalityWorklistInformationFind)
-        for (status, identifier) in responses:
-            dicom_data.append(identifier)
-            if status and status.Status == 0xFF00:
-                print(identifier)
-        assoc.release()
+        try:
+            responses = assoc.send_c_find(ds, ModalityWorklistInformationFind)
+
+            for status, identifier in responses:
+                if status and status.Status == 0xFF00:
+                    dicom_data.append(identifier)
+
+            assoc.release()
+        
+        except Exception as e:
+            logger.error(f"Error during C-FIND request: {e}")
+            assoc.abort()
     else:
-        print("Nelze se připojit k serveru.")
+        logger.error(f"Nelze se připojit k MWL serveru")
+        message = wx.MessageDialog(None, load_text("infoMwlFailed"), load_text("errorDialog"), wx.OK | wx.ICON_ERROR)
+        message.ShowModal()
+        message.Destroy()
 
     for i in range(len(dicom_data)-1):
         studyInstanceUid = str(dicom_data[i][0x20, 0x0d].value)
@@ -420,17 +429,31 @@ def send_dicom_file(ds, file):
     #ae.add_requested_context(VLPhotographicImageStorage, transfer_syntax=ImplicitVRLittleEndian)
     #ae.add_supported_context(VerificationSOPClass)
 
+    logger.debug(f"Attempting to send DICOM file {file}")
+   
     assoc = ae.associate(config["DICOM_SETTINGS"]["ipAddress"], int(config["DICOM_SETTINGS"]["port"]), None, config["DICOM_SETTINGS"]["aec"])
     if assoc.is_established:
-        dataset = ds
-        # `status` is the response from the peer to the store request
-        # but may be an empty pydicom Dataset if the peer timed out or
-        # sent an invalid dataset.
-        status = assoc.send_c_store(dataset)
+        try:
+            dataset = ds
+            status = assoc.send_c_store(dataset)
+            assoc.release()
 
-        assoc.release()
+            if status and status.Status in [0x0000]:  # success
+                logger.info(f"Dicomized file {file} was successfully sent to PACS")
+                return True
+            else:
+                logger.warning(f"Failed to store DICOM file {file}. Status: {status}")
+                return False
 
-        logger.info(f"Dicomized file {file} was succefully sended to PACS")
+        except Exception as e:
+            logger.error(f"Error during C-STORE for file {file}: {e}")
+            assoc.abort()
+            return False
+
+    else:
+        logger.error(f"Association could not be established for file {file}")
+        return False
+
 
 def send_to_aec(event, entered, files, preview):
     """Function send dicom file to specified AEC"""
@@ -465,24 +488,34 @@ def send_to_aec(event, entered, files, preview):
     for image in files.lbLoadedFiles.GetItems():
         file = os.path.join(files.dpcSelectedFolder.GetPath(), image)
         dicomFile = convert_to_dicom(file, patientName, patientId, accessionNumber, studyDate, studyTime, studyUid, seriesUid, fileNumber)
-        send_dicom_file(dicomFile, file)
-        after_send_dicom_file_proccess(dicomFile, file)
-        fileNumber += 1
-        # Aktualizace ProgressDialogu s aktuálním pokrokem
-        dlg.Update(fileNumber-1)  # Aktualizuje hodnotu pokroku
+        statusSend = send_dicom_file(dicomFile, file)
+        if statusSend:
+            after_send_dicom_file_proccess(dicomFile, file)
+            fileNumber += 1
+            # Aktualizace ProgressDialogu s aktuálním pokrokem
+            dlg.Update(fileNumber-1)  # Aktualizuje hodnotu pokroku
+        else:
+            break
+
     dlg.Destroy()  # Zavře ProgressDialog
-    after_send_dicom_study_proccess(entered, preview)
+    after_send_dicom_study_proccess(entered, preview, statusSend)
     return
 
-def after_send_dicom_study_proccess(entered,preview):
+def after_send_dicom_study_proccess(entered,preview, statusSend):
     """Function proccessing study ater send to dicom aet"""
-    message = wx.MessageDialog(entered, load_text("infoSuccessfullySent"), load_text("infoDialog"), wx.OK)
-    message.ShowModal()
-    message.Destroy()
+    if statusSend:
+        message = wx.MessageDialog(entered, load_text("infoSuccessfullySent"), load_text("infoDialog"), wx.OK | wx.ICON_INFORMATION)
+        message.ShowModal()
+        message.Destroy()
 
-    clear_entered(entered)
-    preview.imDisplay.SetBitmap(wx.NullBitmap)  # Nastaví prázdný bitmapový objekt
-    preview.Layout()
+        clear_entered(entered)
+        preview.imDisplay.SetBitmap(wx.NullBitmap)  # Nastaví prázdný bitmapový objekt
+        preview.Layout()
+        
+    else:
+        message = wx.MessageDialog(entered, load_text("infoSendingFailed"), load_text("errorDialog"), wx.OK | wx.ICON_ERROR)
+        message.ShowModal()
+        message.Destroy()
 
 def after_send_dicom_file_proccess(ds, file):
     """Function proccessing file ater send to dicom aet"""
@@ -557,4 +590,4 @@ def on_click_static_text(event,entered):
         # Funkce, která se spustí po kliknutí na StaticText
         dialog = wx.MessageDialog(entered, load_text("infoAboutProgram"), load_text("infoAboutProgramTitle"), wx.OK)
         dialog.ShowModal()
-        dialog.Destroy()   
+        dialog.Destroy()

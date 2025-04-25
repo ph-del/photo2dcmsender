@@ -91,10 +91,14 @@ texts = {
     "colStudyDate" :{"en": "Study date", "cz": "Datum studie"},
     "colStudyUid" :{"en": "Study UID", "cz": "Study UID"},
 
+    "errorDialog" : {"en": "Error", "cz" : "Chyba"},
+
     "infoAboutProgramTitle" : {"en": "Photo2DcmSender", "cz" : "Photo2DcmSender"},
     "infoDialog":{"en":"Data was sended", "cz" : "Data odeslána"},
     "infoFileProcessing":{"en": "File processing", "cz": "Zpracovávání souborů"},
     "infoFileSendings":{"en": "Files are being uploaded...", "cz": "Probíhá odesílání souborů..."},
+    "infoMwlFailed": {"en":"Failed to establish association with the MWL server.", "cz": "Nelze se připojit k MWL serveru."},
+    "infoSendingFailed" : {"en":"Sending failed. See logs for more details.", "cz":"Odeslání se nezdařilo. Více informací najdete v logu."},
     "infoSuccessfullySent": {"en": "Images was successfully sended", "cz":"Snímky byly úspěšně odeslány"},
     
     "titleManualInput" :{"en": "Manual Input of Patient Info", "cz": "Ruční zadání informací o pacientovi"},

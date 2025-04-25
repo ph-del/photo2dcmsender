@@ -1,5 +1,7 @@
 # Photo2DcmSender 
 
+#### cz
+
 ## Popis
 Photo2DcmSender je program pro převod obrázků na formát DICOM. Umožňuje uživatelům odesílat obrázky ve formátu JPEG, PNG nebo BMP jako DICOM soubory do systému AEC. Program je postaven na knihovně wxPython pro grafické rozhraní a dalších knihovnách pro zpracování souborů a komunikaci.
 
@@ -12,9 +14,13 @@ pip install -r requirements.txt
 
 ## Verze
 
-### Photo2DcmSender 1.1
-- Prohozené jméno a příjmení při ručním zadání (functions.py)
-- Opraven výchozí konfigurační soubor: komentář na stejném řádku jako hodnota byl chybně považován za součást hodnoty (dats.py)
+### Photo2DcmSender 1.1 <small>(25.4.2025)</small>
+- Oprava: Prohozené jméno a příjmení při ručním zadání (functions.py)
+- Oprava: Výchozí konfigurační soubor: komentář na stejném řádku jako hodnota byl chybně považován za součást hodnoty (dats.py)
+- Oprava: V případě ručního vstupu se snímky tvářily jako úspěšně odeslané na PACS, i když nebylo navázáno DICOM spojení kvůli chybné konfiguraci. (functions.py)
+- Doplněno: Informační hláška při neúspěšném odeslání dat na PACS. (functions.py)
+- Doplněno: Informační hláška při neúspěšném dotazu na Worklist. (functions.py)
+- Oprava: Správné načítání ikony programu po vytvoření .exe souboru. (mainwindow.py, gui.py)
 
 ### Photo2DcmSender 1.0
 - První vydání
@@ -45,9 +51,7 @@ Copyright (c) 2025 Pavel Honz<br>
 
 ---
 
-#### English
-
-# Photo2DcmSender v1.0
+#### en
 
 ## Description
 Photo2DcmSender is a program for converting images to DICOM format. It allows users to send JPEG, PNG, or BMP images as DICOM files to an AEC system. The program is built using the wxPython library for the graphical interface, along with other libraries for file processing and communication.
@@ -61,9 +65,15 @@ pip install -r requirements.txt
 
 ## Version
 
-### Photo2DcmSender 1.1
-- Swapped first and last name in manual input (functions.py)
-- Fixed default config file: comment on the same line as a value was being interpreted as part of the value (dats.py)
+### Photo2DcmSender 1.1 <small>(25.4.2025)</small>
+- Fix: Swapped first and last name in manual input (functions.py)
+- Fix: In default config file: comment on the same line as a value was being interpreted as part of the value.(dats.py)
+- Fix: In manual input mode, images appeared to be sent to PACS even when no DICOM connection was established due to incorrect configuration. (functions.py)
+- Added: Info message when sending data to PACS fails. (functions.py)
+- Added: Info message when querying the worklist fails. (functions.py)
+- Fix: Program icon now loads correctly after building the .exe file. (mainwindow.py, gui.py)
+
+
 ### Photo2DcmSender 1.0
 - First release
 

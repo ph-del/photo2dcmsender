@@ -3,6 +3,7 @@ logger = logging.getLogger(__name__)
 
 import wx
 import os
+import sys
 
 import src.gui as gui
 import src.settings as settings
@@ -70,16 +71,24 @@ class MainPanel(wx.Panel):
 class RunGui:
     def __init__(self, *args, **kwargs):
         self.app = wx.App(False)
-        self.frame = wx.Frame(None, wx.ID_ANY, "Photo PACS sender")  
+        self.frame = wx.Frame(None, wx.ID_ANY, "Photo PACS sender") 
+        if getattr(sys, 'frozen', False):
+            # Aplikace je zabalená PyInstallerem
+            base_path = sys._MEIPASS
+        else:
+            # Normální běh v Pythonu
+            base_path = os.path.dirname(os.path.abspath(__file__))
 
-        small_icon_path = os.path.join(os.getcwd(), "src/img", "icon-16.png")
+        small_icon_path = os.path.join(base_path, "img", "icon-16.png")
+        logger.debug(f"small_icon_path = {small_icon_path}")
+        #small_icon_path = os.path.join(os.getcwd(), "src/img", "icon-16.png")
         #large_icon_path = os.path.join(os.getcwd(), "src/img", "icon-32.png")
         
         if os.path.exists(small_icon_path): 
             icon = wx.Icon(small_icon_path, wx.BITMAP_TYPE_PNG)
             self.frame.SetIcon(icon)
         else:
-            logger.warn(f"Icon cannot be loaded. Wrong path? Current path is {os.getcwd()} Icon must be in dir program_folder/src/img")
+            logger.warning(f"Icon cannot be loaded. Wrong path? Current path is {os.getcwd()} Icon must be in dir program_folder/src/img")
                
         self.panel = MainPanel(self.frame)
         self.panel.SetName("MainPanel")

@@ -5,8 +5,8 @@ logger = logging.getLogger(__name__)
 
 import os
 import wx
+import sys
 import wx.adv
-
 
 from src.dats import load_text
 
@@ -267,17 +267,26 @@ class ManualInput(wx.Dialog):
         super().__init__(parent, style = wx.DEFAULT_DIALOG_STYLE | wx.FRAME_NO_TASKBAR)
         logger.debug(f"{self.__class__.__name__} started")
 
-        small_icon_path = os.path.join(os.getcwd(), "src/img", "icon-16.png")
-                
+        if getattr(sys, 'frozen', False):
+            # Aplikace je zabalená PyInstallerem
+            base_path = sys._MEIPASS
+        else:
+            # Normální běh v Pythonu
+            base_path = os.path.dirname(os.path.abspath(__file__))
+
+        small_icon_path = os.path.join(base_path, "img", "icon-16.png")
+        logger.debug(f"small_icon_path = {small_icon_path}")
+        #small_icon_path = os.path.join(os.getcwd(), "src/img", "icon-16.png")
+        #large_icon_path = os.path.join(os.getcwd(), "src/img", "icon-32.png")
+        
         if os.path.exists(small_icon_path): 
-            # Načte ikonové soubory
             icon = wx.Icon(small_icon_path, wx.BITMAP_TYPE_PNG)
             self.SetIcon(icon)
         else:
-            logger.warn(f"Icon cannot be loaded. Wrong path? Current path is {os.getcwd()} Icon must be in dir program_folder/src/img")
-        
-        self.SetTitle(load_text("titleManualInput"))
+            logger.warning(f"Icon cannot be loaded. Wrong path? Current path is {os.getcwd()} Icon must be in dir program_folder/src/img")
 
+        self.SetTitle(load_text("titleManualInput"))
+        
         # Widgets initialize
         
         # Dialog widgets------------------------
@@ -324,3 +333,5 @@ class ManualInput(wx.Dialog):
         # Set sizer for panel
         self.SetSizerAndFit(mainSizer)
         self.Layout()
+    
+    
