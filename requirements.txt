@@ -1,0 +1,4 @@
+pydicom
+pynetdicom
+watchdog
+wxPython
