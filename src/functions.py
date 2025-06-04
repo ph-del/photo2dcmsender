@@ -110,9 +110,8 @@ def on_search_click(event, filters, worklist):
             responses = assoc.send_c_find(ds, ModalityWorklistInformationFind)
 
             for status, identifier in responses:
-                if status and status.Status == 0xFF00:
-                    dicom_data.append(identifier)
-
+                dicom_data.append(identifier)
+                                    
             assoc.release()
         
         except Exception as e:

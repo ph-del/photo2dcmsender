@@ -14,6 +14,8 @@ pip install -r requirements.txt
 
 ## Verze
 
+### Photo2DcmSender 1.1 <small>(4.6.2025)</small>
+- Oprava: Nezobrazoval se worklist, prohozený řádek kódu (functions.py)
 ### Photo2DcmSender 1.1 <small>(25.4.2025)</small>
 - Oprava: Prohozené jméno a příjmení při ručním zadání (functions.py)
 - Oprava: Výchozí konfigurační soubor: komentář na stejném řádku jako hodnota byl chybně považován za součást hodnoty (dats.py)
@@ -64,6 +66,9 @@ pip install -r requirements.txt
 ```
 
 ## Version
+
+### Photo2DcmSender 1.1 <small>(4.6.2025)</small>
+- Fix: Worklist was not showing, swapped line of code (functions.py)
 
 ### Photo2DcmSender 1.1 <small>(25.4.2025)</small>
 - Fix: Swapped first and last name in manual input (functions.py)

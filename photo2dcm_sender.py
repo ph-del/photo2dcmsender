@@ -28,6 +28,9 @@
 # - Added: Info message when querying the worklist fails. (functions.py)
 # - Fix: Program icon now loads correctly after building the .exe file. (mainwindow.py, gui.py)
 
+# v1.1 repair
+# - Fix: swapped row in functions.py, worklist dont show values in frame
+
 # 25.04.2025
 
 # used commands:
