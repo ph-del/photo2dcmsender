@@ -14,8 +14,13 @@ pip install -r requirements.txt
 
 ## Verze
 
-### Photo2DcmSender 1.1 <small>(4.6.2025)</small>
-- Oprava: Nezobrazoval se worklist, prohozený řádek kódu (functions.py)
+### Photo2DcmSender 1.2 <small>(5.6.2025)</small>
+- Oprava: Nezobrazoval se worklist ve verzi 1.1, prohozený řádek kódu (functions.py)
+- Aktualizace: knihovna pydicom 2.4.4 nahrazena pydicom 3.0.1. Pracuji jinak s meta_files. Byla přizpůsobena funkce convert_to_dicom (functions.py)
+- Přidáno: ikony aplikace ve formátu .ICO
+- Doplněno: Podpora formátů obrázků GIF, TIF, TGA. Neplatné nebo poškozené obrázky se nezobrazí ani neodešlou. (functions.py)
+
+
 ### Photo2DcmSender 1.1 <small>(25.4.2025)</small>
 - Oprava: Prohozené jméno a příjmení při ručním zadání (functions.py)
 - Oprava: Výchozí konfigurační soubor: komentář na stejném řádku jako hodnota byl chybně považován za součást hodnoty (dats.py)
@@ -28,15 +33,15 @@ pip install -r requirements.txt
 - První vydání
 
 ### Použité knihovny
-- configparser (verze 7.1.0) – MIT License
+- Python 3.13.2
 - czech-holidays (verze 1.0.0) – MIT License
-- icecream (verze 2.1.3) – MIT License
-- pydicom (verze 2.4.4) – MIT License
-- pyinstaller (verze 6.11.1) – GNU General Public License v2 (GPLv2)
-- pynetdicom (verze 2.1.1) – MIT License
+- icecream (verze 2.1.4) – MIT License
+- pydicom (verze 3.0.1) – MIT License
+- pyinstaller (verze 6.13.0) – GNU General Public License v2 (GPLv2)
+- pynetdicom (verze 3.0.1) – MIT License
 - typing_extensions (verze 4.12.2) – Python Software Foundation License
 - watchdog (verze 6.0.0) – Apache Software License
-- wxPython (verze 4.2.2) – wxWindows Library License (https://opensource.org/licenses/wxwindows.php)
+- wxPython (verze 4.2.3) – wxWindows Library License (https://opensource.org/licenses/wxwindows.php)
 
 ## Licence
 Tento program je svobodný software: můžete jej šířit a/nebo upravovat podle podmínek GNU General Public License verze 3, jak ji zveřejnila Free Software Foundation.
@@ -67,11 +72,14 @@ pip install -r requirements.txt
 
 ## Version
 
-### Photo2DcmSender 1.1 <small>(4.6.2025)</small>
-- Fix: Worklist was not showing, swapped line of code (functions.py)
+### Photo2DcmSender 1.2 <small>(June 5, 2025)</small>
+- Fix: Worklist was not displayed – corrected a misplaced line of code in (functions.py).
+- Update: Replaced pydicom version 2.4.4 with version 3.0.1. Adjusted handling of meta_files and updated the convert_to_dicom function in (functions.py).
+- Added: aplication icon in ICO format
+- Added: Support for image formats GIF, TIF, TGA. Invalid or corrupted images will not be displayed or sent. (functions.py)
 
 ### Photo2DcmSender 1.1 <small>(25.4.2025)</small>
-- Fix: Swapped first and last name in manual input (functions.py)
+- Fix: Swapped first and last name in manual input in version 1.1 (functions.py)
 - Fix: In default config file: comment on the same line as a value was being interpreted as part of the value.(dats.py)
 - Fix: In manual input mode, images appeared to be sent to PACS even when no DICOM connection was established due to incorrect configuration. (functions.py)
 - Added: Info message when sending data to PACS fails. (functions.py)
@@ -83,15 +91,15 @@ pip install -r requirements.txt
 - First release
 
 ### Used Libraries
-configparser (version 7.1.0) – MIT License
-czech-holidays (version 1.0.0) – MIT License
-icecream (version 2.1.3) – MIT License
-pydicom (version 2.4.4) – MIT License
-pyinstaller (version 6.11.1) – GNU General Public License v2 (GPLv2)
-pynetdicom (version 2.1.1) – MIT License
-typing_extensions (version 4.12.2) – Python Software Foundation License
-watchdog (version 6.0.0) – Apache Software License
-wxPython (version 4.2.2) – wxWindows Library License (https://opensource.org/licenses/wxwindows.php)
+- Python 3.13.2
+- czech-holidays (verze 1.0.0) – MIT License
+- icecream (verze 2.1.4) – MIT License
+- pydicom (verze 3.0.1) – MIT License
+- pyinstaller (verze 6.13.0) – GNU General Public License v2 (GPLv2)
+- pynetdicom (verze 3.0.1) – MIT License
+- typing_extensions (verze 4.12.2) – Python Software Foundation License
+- watchdog (verze 6.0.0) – Apache Software License
+- wxPython (verze 4.2.3) – wxWindows Library License (https://opensource.org/licenses/wxwindows.php)
 
 ## License
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3, as published by the Free Software Foundation.

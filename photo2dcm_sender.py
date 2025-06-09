@@ -23,7 +23,7 @@
 # v 1.1
 # - Fix: Swapped first and last name in manual input (functions.py)
 # - Fix: In default config file: comment on the same line as a value was being interpreted as part of the value.(dats.py)
-# - Fix: In manual input mode, images appeared to be sent to PACS even when no DICOM connection was established due to incorrect configuration. (functions.py)
+# orrect configuration. (functions.py)
 # - Added: Info message when sending data to PACS fails. (functions.py)
 # - Added: Info message when querying the worklist fails. (functions.py)
 # - Fix: Program icon now loads correctly after building the .exe file. (mainwindow.py, gui.py)
@@ -43,51 +43,49 @@ import logging
 from logging import config
 from datetime import datetime
 
-if not os.path.exists('logs'):
-    os.makedirs('logs')
+if not os.path.exists("logs"):
+    os.makedirs("logs")
 
 from src.dats import load_config
+
 configLogger = load_config()
-programLogLevel = configLogger['LOG_LEVEL']['programRun'].upper()
-mwlLogLevel = configLogger['LOG_LEVEL']['dicomMwl'].upper() 
-consoleLevel = configLogger['LOG_LEVEL']['console'].upper()
+programLogLevel = configLogger["LOG_LEVEL"]["programRun"].upper()
+mwlLogLevel = configLogger["LOG_LEVEL"]["dicomMwl"].upper()
+consoleLevel = configLogger["LOG_LEVEL"]["console"].upper()
 logFileName = f'logs/{datetime.now().strftime("%y%m")}.log'
 
 
 log_config = {
-    "version":1,
-    "root":{
-        "handlers" : ["console", "file", "pynetFile"],
-        "level": "DEBUG"
-    },
-    "handlers":{
-        "console":{
+    "version": 1,
+    "root": {"handlers": ["console", "file", "pynetFile"], "level": "DEBUG"},
+    "handlers": {
+        "console": {
             "formatter": "standard",
             "class": "logging.StreamHandler",
-            "level": consoleLevel
+            "level": consoleLevel,
         },
-        "file":{
-            "formatter":"standard",
-            "class":"logging.FileHandler",
+        "file": {
+            "formatter": "standard",
+            "class": "logging.FileHandler",
             "level": programLogLevel,
-            "filename": logFileName
+            "filename": logFileName,
         },
-        "pynetFile":{
-            "formatter":"standard",
-            "class":"logging.FileHandler",
+        "pynetFile": {
+            "formatter": "standard",
+            "class": "logging.FileHandler",
             "level": mwlLogLevel,
-            "filename": logFileName  
-        }
+            "filename": logFileName,
+        },
     },
-    "formatters":{
+    "formatters": {
         "extended": {
             "format": "%(asctime)s - [%(levelname)s] %(name)s [%(module)s.%(funcName)s:%(lineno)d]: %(message)s",
-            'datefmt': '%d-%m-%Y %H:%M:%S'
+            "datefmt": "%d-%m-%Y %H:%M:%S",
         },
         "standard": {
             "format": "%(asctime)s - %(levelname)s - %(name)-15s\t -  %(module)s\t| %(message)s",
-            'datefmt': '%Y-%m-%d %H:%M:%S'
-        }
+            "datefmt": "%Y-%m-%d %H:%M:%S",
+        },
     },
 }
 
@@ -99,14 +97,14 @@ logger = logging.getLogger(__name__)
 
 ############# Program start #############
 from src import mainwindow
+
 if __name__ == "__main__":
     logger.info("Program started")
-    
-    # if not os.path.isfile(cons.CONFIG_FILE) : 
+
+    # if not os.path.isfile(cons.CONFIG_FILE) :
     #     create_default_config_file()
     #     print("Default config was made")
-    
-    app = mainwindow.RunGui()
-    app.MainLoop()    # Spustí hlavní cyklus
-    logger.info("Program ended correctly")
 
+    app = mainwindow.RunGui()
+    app.MainLoop()  # Spustí hlavní cyklus
+    logger.info("Program ended correctly")

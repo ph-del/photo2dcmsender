@@ -1,0 +1,108 @@
+2025-06-09 14:02:54 - INFO - __main__       	 -  photo2dcm_sender	| Program started
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: dicomized
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: dicomized
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\requirements.jpg
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\requirements.jpg
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: requirements.jpg
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: requirements.jpg
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.avif
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.avif
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.avif
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.avif
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.jp2
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.jp2
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.jp2
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.jp2
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.pdf
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.pdf
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.pdf
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.pdf
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.psd
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.psd
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.psd
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.psd
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.sgi
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.sgi
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.sgi
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.sgi
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.webp
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.webp
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.webp
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.webp
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.xbm
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.xbm
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.xbm
+2025-06-09 14:02:54 - WARNING - root           	 -  functions	| File skipped: test_pattern.xbm
+2025-06-09 14:02:57 - INFO - __main__       	 -  photo2dcm_sender	| Program ended correctly
+2025-06-09 14:03:03 - INFO - __main__       	 -  photo2dcm_sender	| Program started
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: dicomized
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: dicomized
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\requirements.jpg
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\requirements.jpg
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: requirements.jpg
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: requirements.jpg
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.avif
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.avif
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.avif
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.avif
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.jp2
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.jp2
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.jp2
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.jp2
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.pdf
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.pdf
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.pdf
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.pdf
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.psd
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.psd
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.psd
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.psd
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.sgi
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.sgi
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.sgi
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.sgi
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.webp
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.webp
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.webp
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.webp
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.xbm
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.xbm
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.xbm
+2025-06-09 14:03:03 - WARNING - root           	 -  functions	| File skipped: test_pattern.xbm
+2025-06-09 14:03:06 - INFO - __main__       	 -  photo2dcm_sender	| Program ended correctly
+2025-06-09 14:03:12 - INFO - __main__       	 -  photo2dcm_sender	| Program started
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: dicomized
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: dicomized
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\requirements.jpg
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\requirements.jpg
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: requirements.jpg
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: requirements.jpg
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.avif
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.avif
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.avif
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.avif
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.jp2
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.jp2
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.jp2
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.jp2
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.pdf
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.pdf
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.pdf
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.pdf
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.psd
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.psd
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.psd
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.psd
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.sgi
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.sgi
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.sgi
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.sgi
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.webp
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.webp
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.webp
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.webp
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.xbm
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| Invalid or Corrupted Image in Hot Folder! 'C:\hot_folder\test_pattern.xbm
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.xbm
+2025-06-09 14:03:12 - WARNING - root           	 -  functions	| File skipped: test_pattern.xbm
+2025-06-09 14:03:15 - INFO - __main__       	 -  photo2dcm_sender	| Program ended correctly

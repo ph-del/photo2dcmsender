@@ -17,21 +17,25 @@
 
 ###########################################################################
 
-#default configuration and texts in czech and english language
+# default configuration and texts in czech and english language
 
 import logging
+
 logger = logging.getLogger(__name__)
 import os
 import configparser
 
-#Load configure
+
+# Load configure
 def load_config():
     config = configparser.ConfigParser()
     configPath = os.path.join(os.getcwd(), "config.ini")
-    
+
     if os.path.exists(configPath):  # Zkontrolujte, zda soubor existuje
         try:
-            with open(configPath, 'r', encoding='utf-8') as file:  # Nastavte správné kódování
+            with open(
+                configPath, "r", encoding="utf-8"
+            ) as file:  # Nastavte správné kódování
                 config.read_file(file)
         except UnicodeDecodeError as e:
             raise Exception(f"Chyba dekódování souboru {configPath}: {e}")
@@ -40,12 +44,12 @@ def load_config():
     else:
         with open(configPath, "w", encoding="utf-8") as f:
             f.write(default_config)
-        logger.info('Default config file was created.')
+        logger.info("Default config file was created.")
         return load_config()  # Znovu načte nově vytvořený konfigurační soubor
     return config
 
 
-#Load translation
+# Load translation
 def load_text(key):
     config = configparser.ConfigParser()
     config.read(os.path.join(os.getcwd(), "config.ini"))
@@ -64,57 +68,90 @@ texts = {
     "btnSearch": {"en": "Search", "cz": "Vyhledat"},
     "btnSend": {"en": "Send", "cz": "Odeslat"},
     "btnToday": {"en": "Today", "cz": "Dnes"},
-
     "stAbout": {"en": "About program", "cz": "O programu"},
-    
     "txAccessionNumber": {"en": "Accession number", "cz": "Číslo žádanky"},
-    "txEnteredStudy": {"en": "Entered study values", "cz": "Zadané hodnoty studie"}, 
+    "txEnteredStudy": {"en": "Entered study values", "cz": "Zadané hodnoty studie"},
     "txFilesToUpload": {"en": "Files to upload", "cz": "Soubory k odeslání"},
     "txFilters": {"en": "Filters", "cz": "Filtry"},
     "txFirstName": {"en": "First name", "cz": "Křestní jméno"},
     "txLastName": {"en": "Last name", "cz": "Příjmení"},
-    "txNoFilesLoaded": {"en": "No supported files not founded", "cz": "Žádné podporované soubory nebyly nalezeny"},
+    "txNoFilesLoaded": {
+        "en": "No supported files not founded",
+        "cz": "Žádné podporované soubory nebyly nalezeny",
+    },
     "txPatientId": {"en": "Patient ID", "cz": "Rodné číslo"},
     "txPatientName": {"en": "Patient name", "cz": "Jméno pacienta"},
     "txPreview": {"en": "Preview", "cz": "Náhled"},
     "txSending": {"en": "Sending", "cz": "Odesílání"},
-    "txSpinDateFrom": {"en": "Date from", "cz": "Datum od"}, 
-    "txSpinDateTo": {"en": "Date to", "cz": "Datum do"}, 
+    "txSpinDateFrom": {"en": "Date from", "cz": "Datum od"},
+    "txSpinDateTo": {"en": "Date to", "cz": "Datum do"},
     "txStudyUid": {"en": "Study UID", "cz": "Study UID"},
     "txWorklist": {"en": "Worklist", "cz": "Worklist"},
-
-    "colAccessionNumber" :{"en": "Accession number", "cz": "Číslo žádanky"},
-    "colBirthDate" :{"en": "Birth date", "cz": "Datum narození"},
-    "colPatientId" :{"en": "Patient ID", "cz": "Rodné číslo"},
-    "colPatientName" :{"en": "Patient name", "cz": "Jméno pacienta"},
-    "colReqPhys" :{"en": "Requesting", "cz": "Žádatel"},
-    "colStudyDate" :{"en": "Study date", "cz": "Datum studie"},
-    "colStudyUid" :{"en": "Study UID", "cz": "Study UID"},
-
-    "errorDialog" : {"en": "Error", "cz" : "Chyba"},
-
-    "infoAboutProgramTitle" : {"en": "Photo2DcmSender", "cz" : "Photo2DcmSender"},
-    "infoDialog":{"en":"Data was sended", "cz" : "Data odeslána"},
-    "infoFileProcessing":{"en": "File processing", "cz": "Zpracovávání souborů"},
-    "infoFileSendings":{"en": "Files are being uploaded...", "cz": "Probíhá odesílání souborů..."},
-    "infoMwlFailed": {"en":"Failed to establish association with the MWL server.", "cz": "Nelze se připojit k MWL serveru."},
-    "infoSendingFailed" : {"en":"Sending failed. See logs for more details.", "cz":"Odeslání se nezdařilo. Více informací najdete v logu."},
-    "infoSuccessfullySent": {"en": "Images was successfully sended", "cz":"Snímky byly úspěšně odeslány"},
-    
-    "titleManualInput" :{"en": "Manual Input of Patient Info", "cz": "Ruční zadání informací o pacientovi"},
-    
-    "warningDialog" :{"en": "Warning - Insufficient data!", "cz": "Upozornění - Nedostatečná data!"},
-    "warningFirstName" :{"en": "First name must be filled in.", "cz": "Jméno musí být vyplněno."},
-    "warningLastName" :{"en": "Last name must be filled in.", "cz": "Příjmení musí být vyplněno."},
-    "warningNoInfoStudy" : { "en" : "Patient info not filled in, please select study from worklist or insert study info manually", 
-                           "cz" : "Nejsou vyplněny pacientské údaje. Prosím vyberte studii z worklistu, nebo zadejte informace o studii ručně"},
-    "warningNoImageInDir" :{"en": "There are no files, in selected folder. Please select folder with image files",
-                            "cz": "V zadané složce nejsou žádné obrázky. Prosím zadejte složku s obrázky"},
-    "warningPatientId" :{"en": "Patient ID must be filled in.", "cz": "Rodné číslo musí být vyplněno."},
-
-
-    "infoAboutProgram" : {"en":
-                          """\
+    "colAccessionNumber": {"en": "Accession number", "cz": "Číslo žádanky"},
+    "colBirthDate": {"en": "Birth date", "cz": "Datum narození"},
+    "colPatientId": {"en": "Patient ID", "cz": "Rodné číslo"},
+    "colPatientName": {"en": "Patient name", "cz": "Jméno pacienta"},
+    "colReqPhys": {"en": "Requesting", "cz": "Žádatel"},
+    "colStudyDate": {"en": "Study date", "cz": "Datum studie"},
+    "colStudyUid": {"en": "Study UID", "cz": "Study UID"},
+    "errorDialog": {"en": "Error", "cz": "Chyba"},
+    "infoAboutProgramTitle": {"en": "Photo2DcmSender", "cz": "Photo2DcmSender"},
+    "infoDialog": {"en": "Data was sended", "cz": "Data odeslána"},
+    "infoFileProcessing": {"en": "File processing", "cz": "Zpracovávání souborů"},
+    "infoFileSendings": {
+        "en": "Files are being uploaded...",
+        "cz": "Probíhá odesílání souborů...",
+    },
+    "infoMwlFailed": {
+        "en": "Failed to establish association with the MWL server.",
+        "cz": "Nelze se připojit k MWL serveru.",
+    },
+    "infoSendingFailed": {
+        "en": "Sending failed. See logs for more details.",
+        "cz": "Odeslání se nezdařilo. Více informací najdete v logu.",
+    },
+    "infoSuccessfullySent": {
+        "en": "Images was successfully sended",
+        "cz": "Snímky byly úspěšně odeslány",
+    },
+    "titleManualInput": {
+        "en": "Manual Input of Patient Info",
+        "cz": "Ruční zadání informací o pacientovi",
+    },
+    "unsupportedFile": {
+        "en": "Invalid or Corrupted Image",
+        "cz": "Neplatný nebo poškozený obrázek",
+    },
+    "warningBadImageInDir": {
+        "en": "Warning - Invalid or Corrupted Image in Hot Folder!",
+        "cz": "Upozornění - Neplatný nebo poškozený obrázek ve sledované složce!",
+    },
+    "warningDialog": {
+        "en": "Warning - Insufficient data!",
+        "cz": "Upozornění - Nedostatečná data!",
+    },
+    "warningFirstName": {
+        "en": "First name must be filled in.",
+        "cz": "Jméno musí být vyplněno.",
+    },
+    "warningLastName": {
+        "en": "Last name must be filled in.",
+        "cz": "Příjmení musí být vyplněno.",
+    },
+    "warningNoInfoStudy": {
+        "en": "Patient info not filled in, please select study from worklist or insert study info manually",
+        "cz": "Nejsou vyplněny pacientské údaje. Prosím vyberte studii z worklistu, nebo zadejte informace o studii ručně",
+    },
+    "warningNoImageInDir": {
+        "en": "There are no files, in selected folder. Please select folder with image files",
+        "cz": "V zadané složce nejsou žádné obrázky. Prosím zadejte složku s obrázky",
+    },
+    "warningPatientId": {
+        "en": "Patient ID must be filled in.",
+        "cz": "Rodné číslo musí být vyplněno.",
+    },
+    "infoAboutProgram": {
+        "en": """\
 Photo2DcmSender v1.0
 
 This program is free software: you can redistribute it and/or modify
@@ -144,8 +181,7 @@ Kyjevská 44
 
 Copyright (c) 2025 Pavel Honz
 """,
-
-    "cz": """\
+        "cz": """\
 Photo2DcmSender v1.0
 
 Tento program je svobodný software: můžete jej šířit
@@ -175,9 +211,8 @@ Kyjevská 44
 53203 Pardubice
 
 Copyright (c) 2025 Pavel Honz
-"""
-
-}
+""",
+    },
 }
 
 default_config = r"""
@@ -200,7 +235,6 @@ port = 104
 
 # aet store server
 aec = DICOM_SERVER
-
 
 ### MWL
 # aet mwl server
@@ -273,6 +307,3 @@ programRun = INFO
 console = DEBUG
 
 """
-
-
-    
